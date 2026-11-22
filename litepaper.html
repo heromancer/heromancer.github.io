@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heromancer Litepaper v1.0 — Idle RPG on Solana</title>
+<meta name="description" content="The Heromancer litepaper: an idle RPG on Solana with a $1 Genesis Hero NFT entry, the $HMANCER token, account levels, and a self-funding rewards pool.">
+<style>
+:root{--bg:#0d0a1a;--card:#171130;--line:#2c2154;--txt:#efeaff;--mut:#a79fd1;--grn:#14f195;--pur:#9945ff;--gold:#ffd166}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.65}
+a{color:var(--grn);text-decoration:none}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 40px}
+header{padding:46px 0 6px;text-align:center}
+h1{font-size:40px;letter-spacing:1px;background:linear-gradient(90deg,var(--grn),var(--pur));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ver{color:var(--gold);font-size:14px;letter-spacing:1px}
+.tag{color:var(--mut);margin-top:6px}
+.mascot{width:min(300px,70vw);border-radius:16px;border:1px solid var(--line);margin:20px auto 4px;display:block}
+h2{font-size:23px;margin:34px 0 10px;color:var(--txt)}
+h2 span{color:var(--grn)}
+p,li{color:#d9d2f5;font-size:16px}
+ul,ol{margin:8px 0 8px 22px}
+li{margin:4px 0}
+b{color:var(--txt)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:10px 0}
+td,th{padding:10px 13px;border-bottom:1px solid var(--line);text-align:left;font-size:15px}
+tr:last-child td{border-bottom:none}
+td:first-child{color:var(--mut)}
+.note{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--mut);font-size:14.5px;margin-top:14px}
+.back{display:inline-block;margin-top:26px}
+footer{text-align:center;color:var(--mut);font-size:13.5px;border-top:1px solid var(--line);margin-top:36px;padding-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="ver">LITEPAPER · v1.0 · PRE-LAUNCH</div>
+<h1>HEROMANCER</h1>
+<div class="tag">The idle RPG that fights while you sleep — a browser idle hero-battler on <b>Solana</b>, powered by the <b>$HMANCER</b> token and star-rated <b>Hero NFTs</b>.</div>
+<img class="mascot" src="heromancer.jpg" alt="The Heromancer mascot">
+<div class="note">Status: pre-launch. This document describes the game's design. Nothing in it is a promise of price, earnings, or return.</div>
+</header>
+
+<h2>1. <span>Introduction</span></h2>
+<p>Heromancer is an idle RPG. You are the Heromancer — a summoner. Your hero party battles on its own: while you work, while you sleep, while the app is closed. You check in once or twice a day, claim the loot your heroes won, sell it for $HMANCER, and spend $HMANCER on gear, skills, and new heroes that make your party stronger. Like a classic MMO RPG, your <b>account has a level</b>: battles earn EXP, and leveling up unlocks harder zones, extra hero slots, and richer loot. And every hero you own is an <b>NFT with a star rating (★1–★5)</b> — playable in your party and tradable with other players. No reflexes. No grinding. Just heroes fighting and numbers going up, on-chain.</p>
+
+<h2>2. Heroes — <span>star-rated NFTs</span></h2>
+<p>Every hero in Heromancer is an <b>NFT on Solana</b>, living in the player's own wallet — playable in-game and tradable player-to-player:</p>
+<ul>
+<li><b>Star rating ★1–★5</b> — a hero's rarity and power. More stars means higher base power and a higher loot rate. ★1 is common; ★5 is the rarest and strongest.</li>
+<li><b>Playable in-game</b> — heroes form your party: they battle 24/7, earn Loot and EXP, and grow with your account level. Party size grows as your account levels up.</li>
+<li><b>Tradable player-to-player</b> — buy, sell, and trade heroes with other players on any Solana NFT marketplace, anytime. The game reads your party from your wallet.</li>
+<li><b>Star-up fusion</b> — fuse duplicate heroes to raise a hero's star. Fused heroes are <b>burned</b>, so the hero supply shrinks as players build their ★5s.</li>
+</ul>
+<p><b>Getting in:</b> entry is a <b>one-time $1 registration</b>, paid in SOL. It mints the <b>Genesis Hero</b> — a <b>★★★ hero</b> that activates your account (the game checks hero ownership from the connected wallet) and leads your first party. Minting costs a small fraction of the $1 (network rent + fees); the rest funds the game economy. One account per wallet.</p>
+
+<h2>3. <span>The game loop</span></h2>
+<ol>
+<li><b>Battle</b> — your heroes auto-battle waves of monsters automatically, 24/7, earning <b>Loot</b> and <b>EXP</b> at your party's power rate.</li>
+<li><b>Claim</b> — open the game and claim the accumulated loot. Offline earnings are capped at <b>12 hours</b>, so checking in twice a day is optimal — never mandatory.</li>
+<li><b>Sell</b> — sell Loot for $HMANCER in the in-game Market. The Loot→$HMANCER rate is set by the Rewards Pool (Section 5), not fixed, so rewards stay sustainable.</li>
+<li><b>Upgrade</b> — spend $HMANCER on hero gear, skills, and hero levels. Every upgrade raises your party's power. A portion of every upgrade spend is <b>burned</b>.</li>
+<li><b>Summon</b> — spend $HMANCER to summon new heroes (★1–★5; the odds are published in-game before summons open). Every summoned hero is an NFT you own — play it, fuse it, or trade it.</li>
+<li><b>Level up</b> — battles earn EXP and your <b>account level</b> rises, MMO-style: higher account levels unlock harder zones, extra hero slots, and higher loot rates.</li>
+<li><b>Compete</b> — a leaderboard ranks every account by power and loot. Seasons reset the race, not your heroes. <b>Leaderboard rewards:</b> the Top 500 split a <b>10,000 USDT reward pool, paid in SOL</b>, funded by the Rewards Pool — the higher the rank, the bigger the share.</li>
+</ol>
+<p>Battles are calculated <b>server-side</b> from timestamps. Changing your device clock or editing the page does nothing — the server is the referee.</p>
+<table>
+<tr><th colspan="2">Launch parameters (tunable before launch)</th></tr>
+<tr><td>Starter loot rate</td><td>10 Loot / hour</td></tr>
+<tr><td>Offline accumulation cap</td><td>12 hours</td></tr>
+<tr><td>Starting account level</td><td>1 — zones and hero slots unlock by level</td></tr>
+<tr><td>Registration</td><td>$1 in SOL, one-time (mints the ★★★ Genesis Hero)</td></tr>
+<tr><td>Upgrade &amp; summon burn</td><td>10% of every upgrade and summon spend</td></tr>
+</table>
+
+<h2>4. The <span>$HMANCER</span> token</h2>
+<table>
+<tr><td>Name</td><td>Heromancer</td></tr>
+<tr><td>Ticker</td><td>$HMANCER</td></tr>
+<tr><td>Chain</td><td>Solana</td></tr>
+<tr><td>Supply</td><td>1,000,000,000 (fixed)</td></tr>
+<tr><td>Launch</td><td>Fair launch on pump.fun — no presale, no team allocation</td></tr>
+<tr><td>Contract</td><td>Published at launch (TBA)</td></tr>
+</table>
+<p><b>Utility — $HMANCER is the game's only currency:</b></p>
+<ul>
+<li><b>Earn it</b> by selling your heroes' loot in the Market.</li>
+<li><b>Spend it</b> on hero gear, skills, hero levels, hero summons, and future cosmetics and season passes.</li>
+<li><b>Burn it</b> — 10% of all upgrade spending is burned forever, so the more people play, the scarcer $HMANCER gets.</li>
+</ul>
+
+<h2>5. The economy — <span>sources and sinks</span></h2>
+<p>The economy is designed as a loop, not a faucet.</p>
+<p><b>Sources of $HMANCER rewards.</b> The Rewards Pool pays for loot. It is funded by <b>50% of every $1 registration</b> and by <b>creator fees</b> from $HMANCER trading (0.30% of bonding-curve volume on pump.fun; tiered after graduation). The Loot→$HMANCER rate floats with the pool's balance: a full pool pays generously, a thin pool pays less. Rewards can never exceed what the pool actually holds.</p>
+<p><b>Sinks.</b> Hero upgrades and summons (90% recycled to the Rewards Pool, <b>10% burned</b>). Hero fusion <b>burns duplicate hero NFTs</b>. Future: season passes, cosmetics.</p>
+<p><b>Project revenue.</b> 50% of registration fees, plus a creator-fee share allocated to operations.</p>
+<p>This structure means player rewards come from <b>new players and trading activity</b> — stated plainly, the way it should be.</p>
+
+<h2>6. <span>Fair play</span></h2>
+<ul>
+<li>Battles are computed server-side; client tampering has no effect.</li>
+<li>One account per wallet; hero ownership is read from the player's wallet, and summon odds are published in-game.</li>
+<li>The Rewards Pool balance and the Loot→$HMANCER rate are displayed in-game, in the open.</li>
+</ul>
+
+<h2>7. Risks and <span>disclaimer</span></h2>
+<p>Heromancer is a game. $HMANCER is a game token whose market price is set by traders and can go to zero. Registration buys a game access NFT — not an investment. There is <b>no guarantee of any price, earnings, or return</b>. Game parameters in this litepaper may be tuned before launch; material changes will be announced on the official channels.</p>
+
+<a class="back" href="index.html">← Back to the Heromancer site</a>
+<footer>Heromancer — your heroes fight while you sleep.<br><a href="index.html">heromancer.github.io</a> · <a href="https://x.com/MuseAIv3" target="_blank" rel="noopener">@MuseAIv3</a></footer>
+</div>
+</body>
+</html>

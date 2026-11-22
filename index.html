@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heromancer — The Idle RPG That Fights While You Sleep | Solana</title>
+<meta name="description" content="Heromancer is an idle RPG on Solana. Pay $1 once, get a Genesis Hero NFT, and your heroes battle 24/7. Claim loot, earn $HMANCER, gear up, level up, repeat.">
+<style>
+:root{--bg:#0d0a1a;--card:#171130;--line:#2c2154;--txt:#efeaff;--mut:#a79fd1;--grn:#14f195;--pur:#9945ff;--gold:#ffd166}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:radial-gradient(900px 480px at 50% -80px,rgba(153,69,255,.20),transparent 60%),radial-gradient(700px 420px at 88% 32%,rgba(20,241,149,.07),transparent 60%),var(--bg);color:var(--txt);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.55}
+a{color:var(--grn);text-decoration:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{padding:56px 0 8px;text-align:center}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--card);color:var(--gold);border-radius:999px;padding:4px 14px;font-size:13px;letter-spacing:.4px}
+h1{font-size:52px;letter-spacing:1px;margin:16px 0 4px;background:linear-gradient(90deg,var(--grn),var(--pur));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{font-size:20px;color:var(--txt)}
+.sub{color:var(--mut);max-width:620px;margin:10px auto 0}
+.mascot{width:min(420px,84vw);border-radius:18px;border:1px solid var(--line);margin:26px auto 6px;display:block;box-shadow:0 12px 44px rgba(153,69,255,.28)}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:22px 0 6px}
+.btn{padding:12px 22px;border-radius:12px;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--txt)}
+.btn.main{background:linear-gradient(90deg,var(--pur),#6d28d9);border:none;color:#fff}
+.btn.dim{opacity:.65;font-weight:600}
+section{padding:38px 0 6px}
+h2{font-size:27px;margin-bottom:14px}
+h2 span{color:var(--grn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h3{font-size:17px;margin-bottom:6px}
+.card p{color:var(--mut);font-size:15px}
+.card,.btn{transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(153,69,255,.22)}
+.btn:hover{transform:translateY(-2px)}
+.status{margin:26px auto 0;max-width:640px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:15px;color:var(--mut);text-align:left}
+.status b{color:var(--txt)}
+.status .live{color:var(--grn);font-weight:700}
+.status .soon{color:var(--gold);font-weight:700}
+.mock{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;max-width:640px;margin:0 auto}
+.mock .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14.5px;color:var(--mut);margin-bottom:12px}
+.mock .top b{color:var(--txt)}
+.plots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.plot{background:#0d0a1a;border:1px solid var(--line);border-radius:12px;padding:14px 6px;text-align:center;font-size:26px}
+.plot small{display:block;font-size:11.5px;color:var(--mut);margin-top:6px}
+.claimbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.claimbar .btn{padding:10px 18px}
+.bar{height:14px;border-radius:999px;background:#0d0a1a;border:1px solid var(--line);overflow:hidden;margin:6px 0 14px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--grn),var(--pur))}
+.flow{font-size:15px;color:var(--mut)}
+.flow b{color:var(--txt)}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700;font-size:16px}
+.faq p{color:var(--mut);font-size:15px;margin-top:8px}
+.note{font-size:13.5px;color:var(--mut);text-align:center;margin-top:10px}
+.num{font-size:22px;color:var(--pur);font-weight:800}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+td,th{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:15px}
+tr:last-child td{border-bottom:none}
+td:first-child{color:var(--mut);width:42%}
+.loop{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;color:var(--mut);font-size:15.5px}
+.loop b{color:var(--txt)}
+.road td:first-child{width:24%;color:var(--gold);font-weight:700}
+.done{color:var(--grn);font-weight:700}.next{color:var(--gold);font-weight:700}
+.disc{color:var(--mut);font-size:13.5px;border-top:1px solid var(--line);margin-top:42px;padding:20px 0 34px}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.mascot{animation:floaty 5s ease-in-out infinite}
+@keyframes shine{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+h1{background-size:200% auto;animation:shine 7s linear infinite}
+.shot{width:100%;max-width:760px;border-radius:16px;border:1px solid var(--line);display:block;margin:0 auto 16px;box-shadow:0 12px 40px rgba(20,241,149,.16)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.poolflow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;justify-content:center;margin:8px 0 4px}
+.pf{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14.5px;color:var(--mut);max-width:235px}
+.pf b{color:var(--txt)}
+.pf .big{font-size:19px}
+.arrow{align-self:center;font-size:20px;color:var(--grn)}
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.phase{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.phase .st{font-size:13px;letter-spacing:.4px;font-weight:700}
+.phase h3{font-size:16.5px;margin:6px 0 4px}
+.phase p{color:var(--mut);font-size:14.5px}
+.comm{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{text-align:center;color:var(--mut);font-size:14px;padding-bottom:34px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="badge">🌱 REGISTRATION OPEN · SOLANA</div>
+<h1>HEROMANCER</h1>
+<div class="tag">The idle RPG that fights while you sleep.</div>
+<p class="sub">An idle hero-battler on Solana. Your heroes fight 24/7 — while you work, while you sleep, while the app is closed. Check in, claim the loot, earn <b>$HMANCER</b>, gear up, level up your account, repeat.</p>
+<img class="mascot" src="heromancer.jpg" alt="The Heromancer — wizard farmer mascot">
+<div class="btns">
+<a class="btn main" href="litepaper.html">📜 Read the Litepaper</a>
+<a class="btn" href="https://x.com/MuseAIv3" target="_blank" rel="noopener">Follow updates on X</a>
+<a class="btn dim" href="#" onclick="return false">🪙 $HMANCER — launching soon</a>
+<a class="btn" href="register.html">🎫 Register &amp; mint — $1</a>
+</div>
+<div class="status"><span class="live">● Registration is OPEN</span> — <b><a href="register.html">register &amp; mint here</a></b>: pay $1 in SOL and your <b>Genesis Hero NFT</b> is minted to your wallet. &nbsp;<span class="soon">◐ Next:</span> <b>$HMANCER fair launch on pump.fun</b> (listing soon, contract TBA) and the battle opening. No contract address is public yet, so any $HMANCER you see now is not ours.</div>
+</header>
+
+<section>
+<h2>How it <span>works</span></h2>
+<div class="grid">
+<div class="card"><div class="num">1</div><h3>Register — $1, once</h3><p>Registration is a mint: <a href="register.html">pay a one-time $1 in SOL</a> and your <b>first Hero NFT</b> — a ★★★ Genesis hero — is minted straight to your wallet: your account key and your first fighter in one.</p></div>
+<div class="card"><div class="num">2</div><h3>Your heroes battle</h3><p>Your party auto-battles around the clock, earning Loot and EXP. Offline loot piles up for up to 12 hours — check in twice a day, never grind.</p></div>
+<div class="card"><div class="num">3</div><h3>Claim &amp; sell</h3><p>Claim the Loot your heroes won and sell it in the Market for <b>$HMANCER</b>, the game's only currency.</p></div>
+<div class="card"><div class="num">4</div><h3>Upgrade &amp; climb</h3><p>Spend $HMANCER on gear, skills, hero levels and new hero summons to raise your party's power and level up your account — and climb the leaderboard, where the <b>Top 500 split a 10,000 USDT reward pool</b>, paid in SOL.</p></div>
+</div>
+</section>
+
+<section>
+<h2>See the <span>game</span></h2>
+<img class="shot" src="gameplay.jpg" alt="Heromancer gameplay concept art — hero party auto-battling a slime and a goblin, account level, CLAIM LOOT button">
+<div class="mock">
+<div class="top"><span>⭐ <b>Account Lv. 12</b> · EXP 68%</span><span>⚔️ <b>320 Loot / hour</b></span><span>🎒 <b>86 Loot</b> ready</span><span>🪙 <b>1,240 $HMANCER</b></span></div>
+<div class="plots">
+<div class="plot">🧙<small>Heromancer · Lv. 7</small></div>
+<div class="plot">🛡️<small>Knight · Lv. 8</small></div>
+<div class="plot">🏹<small>Archer · Lv. 6</small></div>
+<div class="plot">🔮<small>Hero slot · Lv. 15</small></div>
+<div class="plot">👺<small>Goblin · Zone 3</small></div>
+<div class="plot">💀<small>Skeleton · Zone 3</small></div>
+<div class="plot">🐉<small>Boss · Lv. 20</small></div>
+<div class="plot">🔒<small>Zone 4 · Lv. 15</small></div>
+</div>
+<div class="claimbar"><span>⏰ Offline loot piles up for up to <b>12 hours</b> — check in twice a day.</span><a class="btn main" href="#" onclick="return false">Claim loot</a></div>
+</div>
+<p class="note">Concept art + interface preview — this is how the battle will look and play. It is not live gameplay yet.</p>
+</section>
+
+<section>
+<h2>Hero <span>NFTs</span> — starred, playable, tradable</h2>
+<div class="loop">
+<p>🎫 <b>Account key</b> — your first Hero NFT activates your account; the game verifies it in your wallet. No NFT, no party.</p>
+<p>⭐ <b>Star-rated</b> — every hero carries <b>★1 to ★5</b>. More stars means more base power and a higher loot rate — a ★5 is a monster.</p>
+<p>⚔️ <b>Plays in-game</b> — your heroes are your party: they battle for you 24/7, earn Loot and EXP, and grow with your account level.</p>
+<p>🔄 <b>Trade player-to-player</b> — heroes are real NFTs in your wallet: buy, sell and trade them with other players on any Solana NFT marketplace, anytime. Your ★5 pull is your asset.</p>
+</div>
+</section>
+
+<section>
+<h2>$HMANCER <span>token</span></h2>
+<table>
+<tr><td>Name / Ticker</td><td>Heromancer / <b>$HMANCER</b></td></tr>
+<tr><td>Chain</td><td>Solana</td></tr>
+<tr><td>Supply</td><td>1,000,000,000 — fixed</td></tr>
+<tr><td>Launch</td><td>Fair launch on pump.fun — no presale, no team allocation</td></tr>
+<tr><td>Contract</td><td>Published at launch (TBA)</td></tr>
+<tr><td>Utility</td><td>Sell loot for it · gear up heroes with it · 10% of every upgrade spend is <b>burned</b></td></tr>
+</table>
+</section>
+
+<section>
+<h2>Tokenomics, <span>at a glance</span></h2>
+<div class="flow">
+<p><b>$HMANCER supply: 1,000,000,000 — fixed.</b> Fair launch on pump.fun: the whole supply goes to the bonding curve. No presale, no team allocation, no hidden wallets.</p>
+<div class="bar"><i style="width:100%"></i></div>
+<p>🪙 <b>100% — public bonding curve</b> (fair launch, everyone buys at the same curve)</p>
+<p>🚫 <b>0% — presale · 0% — team allocation</b></p>
+</div>
+<br>
+<div class="flow">
+<p><b>Where each $1 registration goes:</b></p>
+<div class="bar"><i style="width:50%"></i></div>
+<p>💰 <b>50% → Rewards Pool</b> (pays for loot) · 🛠️ <b>50% → operations</b></p>
+<p><b>Where each upgrade spend goes:</b></p>
+<div class="bar"><i style="width:90%;background:linear-gradient(90deg,var(--pur),var(--gold))"></i></div>
+<p>♻️ <b>90% → recycled to the Rewards Pool</b> · 🔥 <b>10% → burned forever</b></p>
+</div>
+<br>
+<div class="flow"><p><b>How the Rewards Pool flows:</b></p></div>
+<div class="poolflow">
+<div class="pf"><span class="big">🎫</span> <b>$1 registrations</b><br>50% of every signup flows in</div>
+<div class="arrow">➜</div>
+<div class="pf"><span class="big">💰</span> <b>Rewards Pool</b><br>also fed by $HMANCER creator fees</div>
+<div class="arrow">➜</div>
+<div class="pf"><span class="big">🎒</span> <b>Loot payouts</b><br>Loot sells for $HMANCER at a rate that floats with the pool</div>
+</div>
+<div class="poolflow">
+<div class="pf"><span class="big">⬆️</span> <b>Upgrade spend</b></div>
+<div class="arrow">➜</div>
+<div class="pf"><b>90%</b> ♻️ recycled back to the pool</div>
+<div class="pf"><b>10%</b> 🔥 burned forever</div>
+</div>
+</section>
+
+<section>
+<h2>An economy that <span>loops</span></h2>
+<div class="loop">
+<p>Player rewards are paid from a <b>Rewards Pool</b> — funded by <b>50% of every registration</b> plus <b>creator fees</b> from $HMANCER trading. The Loot→$HMANCER rate floats with the pool, so rewards never exceed what the pool holds. Upgrades recycle 90% back to the pool and <b>burn 10% forever</b>: the more people play, the scarcer $HMANCER gets. Battles are calculated server-side — the server is the referee, clock tricks do nothing.</p>
+</div>
+</section>
+
+<section>
+<h2>Launch <span>status</span></h2>
+<div class="phases">
+<div class="phase"><div class="st" style="color:var(--grn)">● LIVE NOW</div><h3>Website &amp; litepaper</h3><p>This site and the litepaper are published — the game design is locked and public for anyone to read.</p></div>
+<div class="phase"><div class="st" style="color:var(--grn)">● LIVE NOW</div><h3>Registration mint open</h3><p>Registration is a mint: <a href="register.html">pay $1 in SOL</a> and the Genesis Hero NFT is minted to your wallet — your first hero and your key for launch day.</p></div>
+<div class="phase"><div class="st" style="color:var(--gold)">◐ UP NEXT</div><h3>$HMANCER listing + the battle opens</h3><p>The token lists on pump.fun (fair launch, no presale) and the first hero parties start battling for Genesis Hero holders, around the clock. No date is set yet — the contract address appears here and on X first, nowhere else.</p></div>
+</div>
+<p class="note">⚠️ No $HMANCER contract address is public yet. Any $HMANCER you find before the official launch announcement is a fake.</p>
+</section>
+
+<section class="faq">
+<h2>Questions, <span>answered</span></h2>
+<details><summary>When does Heromancer launch?</summary><p>Registration (the Genesis Hero NFT mint) is open now. The $HMANCER token listing and the battle opening come next, with no fixed date yet; watch @MuseAIv3 on X for the announcement.</p></details>
+<details><summary>How do I register?</summary><p>On the <a href="register.html">register page</a>: send exactly 0.0145 SOL (≈$1) from a wallet you control to the address shown there. Our system detects the payment and mints your Genesis Hero NFT to that same wallet, usually within about 10 minutes. Never pay from an exchange — the NFT would go to the exchange's wallet.</p></details>
+<details><summary>What do I get for the $1?</summary><p>One Hero NFT — a ★★★ Genesis hero: your account key and your first fighter in one. It is minted to your wallet when the $1 lands — minting costs a small fraction of the $1. Pay once, keep the hero — there is no subscription.</p></details>
+<details><summary>How do I earn $HMANCER?</summary><p>Your heroes battle automatically. Claim their Loot and sell it in the in-game Market for $HMANCER. The exchange rate floats with the Rewards Pool, so payouts stay within what the pool holds.</p></details>
+<details><summary>Can I sell my heroes?</summary><p>Yes — every hero is a transferable NFT in your wallet. Sell or trade heroes player-to-player on any Solana NFT marketplace: a duplicate can fund your next summon, and a ★5 you pull can be sold to another player. The Genesis hero also carries the account access.</p></details>
+<details><summary>Do I have to play every day?</summary><p>No. Offline loot piles up for up to 12 hours, so checking in once or twice a day is enough. Battles are calculated server-side, so changing your device clock does nothing.</p></details>
+<details><summary>Is $HMANCER an investment?</summary><p>No. It is a game token: its price is set by traders and can go to zero. Registration buys a game access NFT, not an investment, and there is no guarantee of any price, earnings, or return.</p></details>
+</section>
+
+<section>
+<h2>Join the <span>community</span></h2>
+<div class="comm">
+<a class="btn main" href="https://x.com/MuseAIv3" target="_blank" rel="noopener">𝕏 — @MuseAIv3 · live</a>
+<a class="btn dim" href="#" onclick="return false">✈️ Telegram — coming soon</a>
+<a class="btn dim" href="#" onclick="return false">🎮 Discord — coming soon</a>
+</div>
+<p class="note">Launch announcements land on X first. Telegram and Discord open closer to launch — links will appear here, and only here.</p>
+</section>
+
+<div class="disc">Heromancer is a game. $HMANCER is a game token whose market price is set by traders and can go to zero. Registration buys a game access NFT — not an investment. There is no guarantee of any price, earnings, or return. Game parameters may be tuned before launch; material changes will be announced on the official channels.</div>
+<footer>⚔️ Heromancer — your heroes fight while you sleep.<br>Built on Solana · <a href="litepaper.html">Litepaper</a> · <a href="https://x.com/MuseAIv3" target="_blank" rel="noopener">@MuseAIv3</a></footer>
+</div>
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('section,.card,.phase').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')),1600);
+</script>
+</body>
+</html>
