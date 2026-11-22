@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heromancer Game Guide — Heroes, Battle Zones, Summoning, Gear & Skills</title>
+<meta name="description" content="The Heromancer game guide: the full hero roster by star, battle zones and loot rates, summon prices and published odds, gear rarities and class skills.">
+<style>
+:root{--bg:#0d0a1a;--card:#171130;--line:#2c2154;--txt:#efeaff;--mut:#a79fd1;--grn:#14f195;--pur:#9945ff;--gold:#ffd166}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.65}
+a{color:var(--grn);text-decoration:none}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 40px}
+header{padding:46px 0 6px;text-align:center}
+h1{font-size:40px;letter-spacing:1px;background:linear-gradient(90deg,var(--grn),var(--pur));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ver{color:var(--gold);font-size:14px;letter-spacing:1px}
+.tag{color:var(--mut);margin-top:6px}
+.mascot{width:min(300px,70vw);border-radius:16px;border:1px solid var(--line);margin:20px auto 4px;display:block}
+h2{font-size:23px;margin:34px 0 10px;color:var(--txt)}
+h2 span{color:var(--grn)}
+p,li{color:#d9d2f5;font-size:16px}
+ul,ol{margin:8px 0 8px 22px}
+li{margin:4px 0}
+b{color:var(--txt)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:10px 0}
+td,th{padding:10px 13px;border-bottom:1px solid var(--line);text-align:left;font-size:15px}
+tr:last-child td{border-bottom:none}
+td:first-child{color:var(--mut)}
+.note{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--mut);font-size:14.5px;margin-top:14px}
+.back{display:inline-block;margin-top:26px}
+footer{text-align:center;color:var(--mut);font-size:13.5px;border-top:1px solid var(--line);margin-top:36px;padding-top:18px}
+.stars{color:var(--gold);white-space:nowrap}
+</style>
+<style>
+/* ===== 3D AAA polish ===== */
+header{position:relative;overflow:hidden}
+#bg3d{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+header>*{position:relative;z-index:1}
+h1{filter:drop-shadow(0 6px 22px rgba(153,69,255,.45)) drop-shadow(0 2px 2px rgba(0,0,0,.6))}
+h2{text-shadow:0 4px 26px rgba(153,69,255,.35)}
+.mascot{box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08),0 0 44px rgba(153,69,255,.35)}
+.tilt{transform-style:preserve-3d;will-change:transform;transition:transform .18s ease-out}
+.cards{perspective:1200px}
+.card{transform-style:preserve-3d;transition:transform .35s ease,box-shadow .35s ease;box-shadow:0 12px 30px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.06)}
+.card:hover{transform:translateY(-7px) rotateX(4deg) rotateY(-3deg);box-shadow:0 30px 56px rgba(0,0,0,.55),0 0 0 1px rgba(153,69,255,.35),inset 0 1px 0 rgba(255,255,255,.1)}
+.btn{box-shadow:0 12px 26px rgba(20,241,149,.22),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(20,241,149,.32),inset 0 1px 0 rgba(255,255,255,.5)}
+.frame3d{perspective:1300px;margin:6px 0 12px}
+.frame3d img{transform:rotateX(7deg) rotateY(-5deg);box-shadow:0 34px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);transition:transform .55s ease;margin:0}
+.frame3d:hover img{transform:rotateX(0deg) rotateY(0deg)}
+.shot{transform:perspective(1300px) rotateX(7deg) rotateY(-5deg);box-shadow:0 34px 60px rgba(0,0,0,.6);transition:transform .55s ease}
+.shot:hover{transform:perspective(1300px) rotateX(0deg) rotateY(0deg)}
+.paybox,.status{box-shadow:0 18px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.07)}
+.mock{box-shadow:0 30px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.07);transform:perspective(1300px) rotateX(4deg);transition:transform .5s ease}
+.mock:hover{transform:perspective(1300px) rotateX(0deg)}
+.qr{box-shadow:0 22px 44px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.1)}
+@media (prefers-reduced-motion: reduce){.card,.btn,.frame3d img,.shot,.mock,.tilt{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="ver">GAME GUIDE · PRE-LAUNCH</div>
+<h1>HEROMANCER</h1>
+<div class="tag">Heroes, battle zones, summoning, gear &amp; skills — the full systems guide. Design values below are launch values; anything tuned before launch will be updated here and in the <a href="litepaper.html">litepaper</a>.</div>
+<div class="tilt" style="display:inline-block"><img class="mascot" src="heromancer.jpg" alt="The Heromancer mascot"></div>
+</header>
+
+<h2>1. Heroes — <span>the roster</span></h2>
+<p>Every hero is a <b>star-rated NFT (★1–★5)</b> in your wallet: playable in your party and tradable with other players. A hero's <b>Power = ATK × 2 + DEF + HP ÷ 10</b>. Heroes gain levels (1–50) from battle EXP — each level adds +4% base stats — and duplicates can be fused: <b>burn 2 duplicates of the same star to raise one hero by +1★</b> (max ★5). Burned heroes are destroyed forever.</p>
+<table>
+<tr><th>Star</th><th>Hero</th><th>Class</th><th>HP</th><th>ATK</th><th>DEF</th><th>Power</th></tr>
+<tr><td class="stars">★1</td><td>Bram the Squire</td><td>Knight</td><td>130</td><td>8</td><td>6</td><td>35</td></tr>
+<tr><td class="stars">★1</td><td>Pip the Longbow</td><td>Ranger</td><td>100</td><td>10</td><td>4</td><td>34</td></tr>
+<tr><td class="stars">★1</td><td>Nia the Acolyte</td><td>Cleric</td><td>110</td><td>7</td><td>5</td><td>30</td></tr>
+<tr><td class="stars">★2</td><td>Gorath the Sellsword</td><td>Knight</td><td>260</td><td>17</td><td>13</td><td>73</td></tr>
+<tr><td class="stars">★2</td><td>Sylva the Huntress</td><td>Ranger</td><td>220</td><td>21</td><td>10</td><td>74</td></tr>
+<tr><td class="stars">★2</td><td>Ember the Pyromancer</td><td>Mage</td><td>200</td><td>23</td><td>8</td><td>74</td></tr>
+<tr><td class="stars">★3</td><td>Vex the Shadow</td><td>Rogue</td><td>380</td><td>40</td><td>18</td><td>136</td></tr>
+<tr><td class="stars">★3</td><td>Mira the Stormcaller</td><td>Mage</td><td>420</td><td>42</td><td>20</td><td>146</td></tr>
+<tr><td class="stars">★3</td><td>Brother Anselm</td><td>Cleric</td><td>480</td><td>34</td><td>26</td><td>142</td></tr>
+<tr><td class="stars">★4</td><td>Dame Aurelia the Dawnblade</td><td>Knight</td><td>1,150</td><td>82</td><td>55</td><td>334</td></tr>
+<tr><td class="stars">★4</td><td>Kaizel the Voidbow</td><td>Ranger</td><td>950</td><td>96</td><td>44</td><td>331</td></tr>
+<tr><td class="stars">★4</td><td>Thessa the Tide Oracle</td><td>Cleric</td><td>1,050</td><td>76</td><td>58</td><td>315</td></tr>
+<tr><td class="stars">★5</td><td>Ignivar the Dragonlord</td><td>Mage</td><td>2,100</td><td>205</td><td>105</td><td>725</td></tr>
+<tr><td class="stars">★5</td><td>Seraphine the Starforged</td><td>Knight</td><td>2,600</td><td>175</td><td>130</td><td>740</td></tr>
+<tr><td class="stars">★5</td><td>Morvain the Night Eternal</td><td>Rogue</td><td>2,200</td><td>215</td><td>100</td><td>750</td></tr>
+</table>
+<p><b>The Genesis Hero</b> — a special <span class="stars">★★★</span> Knight (HP 500 · ATK 38 · DEF 24 · Power 160) minted only by <a href="register.html">registration</a>. It is your account key and first fighter, is <b>never in the summon pool</b>, and is capped at <b>5,000</b> forever.</p>
+<p><b>Party &amp; account levels.</b> Your party holds up to 5 heroes: slots 1–3 from account level 1, the 4th at level 10, the 5th at level 20. Battles earn EXP (1 EXP per Loot); account level also unlocks gear crafting (Lv5) and fusion (Lv15).</p>
+
+<h2>2. Battle — <span>zones &amp; loot</span></h2>
+<p>Your party auto-battles in one zone at a time, 24/7 — even while you're offline (earnings accumulate up to the 12-hour cap). <b>Loot per hour = 10 × zone multiplier × (Party Power ÷ 160)</b>, so a fresh Genesis Hero earns the starter 10 Loot/hr, and every point of Power you add pays directly. Each zone has a <b>Power gate</b>: the minimum Party Power to enter.</p>
+<table>
+<tr><th>Zone</th><th>Name</th><th>Power gate</th><th>Loot</th><th>Gear drops</th></tr>
+<tr><td>1</td><td>Verdant Fields</td><td>0</td><td>×1.0</td><td>Common</td></tr>
+<tr><td>2</td><td>Goblin Caves</td><td>250</td><td>×2.2</td><td>Common, Fine</td></tr>
+<tr><td>3</td><td>Sunken Crypt</td><td>700</td><td>×4.5</td><td>Fine, Rare</td></tr>
+<tr><td>4</td><td>Ember Wastes</td><td>1,800</td><td>×9</td><td>Rare, Epic</td></tr>
+<tr><td>5</td><td>Dragon's Maw</td><td>4,500</td><td>×18</td><td>Epic, Legendary</td></tr>
+</table>
+<p>Every zone's wave cycle ends in a <b>boss</b>: boss kills pay a bonus Loot burst and the zone's best gear odds. All battles are calculated server-side — the server is the referee.</p>
+
+<h2>3. Summoning — <span>prices &amp; published odds</span></h2>
+<p>Summon new heroes with <b>$HMANCER</b>. Every summoned hero is a fresh NFT minted to your wallet — play it, fuse it, or trade it. As promised in the litepaper, the odds are published here <b>before</b> summons open:</p>
+<table>
+<tr><td>Single summon</td><td>1,000 $HMANCER</td></tr>
+<tr><td>10× summon</td><td>9,000 $HMANCER — guarantees at least one ★3 or higher</td></tr>
+<tr><td class="stars">★1 odds</td><td>44%</td></tr>
+<tr><td class="stars">★2 odds</td><td>30%</td></tr>
+<tr><td class="stars">★3 odds</td><td>17%</td></tr>
+<tr><td class="stars">★4 odds</td><td>6.5%</td></tr>
+<tr><td class="stars">★5 odds</td><td>2.5%</td></tr>
+<tr><td>Pity guarantee</td><td>If 49 summons pass without a ★5, the 50th summon is a guaranteed ★5</td></tr>
+</table>
+<p>90% of every summon spend recycles to the Rewards Pool and 10% is burned. The Genesis Hero is never in the summon pool. Summoning opens after the $HMANCER launch on <b>December 1, 2026</b>; the exact opening is announced on this site.</p>
+
+<h2>4. Gear &amp; <span>skills</span></h2>
+<p><b>Gear</b> — three slots per hero: <b>Weapon, Armor, Trinket</b>. Gear is an in-game item (heroes are the NFTs). It drops from battle zones and can be crafted: <b>burn 3 pieces of one rarity to forge 1 of the next</b> (account Lv5+).</p>
+<table>
+<tr><th>Rarity</th><th>Hero stats</th><th>Party loot rate</th></tr>
+<tr><td>Common</td><td>+5%</td><td>—</td></tr>
+<tr><td>Fine</td><td>+10%</td><td>—</td></tr>
+<tr><td>Rare</td><td>+18%</td><td>+2%</td></tr>
+<tr><td>Epic</td><td>+30%</td><td>+5%</td></tr>
+<tr><td>Legendary</td><td>+50%</td><td>+12%, plus a unique named effect</td></tr>
+</table>
+<p><b>Skills</b> — every class has a passive (always on) and an ultimate (auto-casts in battle). The passive unlocks at ★1, the ultimate at ★3, and ultimate rank II at ★5. Skill strength grows +25% per star above ★1.</p>
+<table>
+<tr><th>Class</th><th>Passive</th><th>Ultimate</th></tr>
+<tr><td>Knight</td><td><b>Bulwark</b> — +10% party Power in battle</td><td><b>Shield Slam</b> — a heavy hit that staggers the wave</td></tr>
+<tr><td>Ranger</td><td><b>Keen Eye</b> — +10% party crit chance</td><td><b>Arrow Storm</b> — a volley that hits the whole wave</td></tr>
+<tr><td>Mage</td><td><b>Arcane Surge</b> — +8% party ATK</td><td><b>Meteor</b> — massive area damage</td></tr>
+<tr><td>Rogue</td><td><b>Greed</b> — +8% Loot from battles</td><td><b>Assassinate</b> — executes a wounded boss</td></tr>
+<tr><td>Cleric</td><td><b>Blessing</b> — +10% EXP earned</td><td><b>Radiant Heal</b> — restores the party mid-wave</td></tr>
+</table>
+<div class="note">Heromancer is a game. $HMANCER is a game token whose price is set by traders and can go to zero. Registration buys a game access NFT — not an investment — and there is no guarantee of any price, earnings, or return. Full design and economy: the <a href="litepaper.html">litepaper</a>.</div>
+
+<a class="back" href="index.html">← Back to the Heromancer site</a>
+<footer>Heromancer — your heroes fight while you sleep.<br><a href="index.html">heromancer.github.io</a></footer>
+</div>
+<script>
+document.querySelectorAll('.tilt').forEach(function(el){
+  el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5;var y=(e.clientY-r.top)/r.height-.5;el.style.transform='rotateY('+(x*16)+'deg) rotateX('+(-y*13)+'deg)';});
+  el.addEventListener('pointerleave',function(){el.style.transform='';});
+});
+</script>
+</body>
+</html>
