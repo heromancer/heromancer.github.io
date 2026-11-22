@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heromancer Litepaper v1.0 — Idle RPG on Solana</title>
-<meta name="description" content="The Heromancer litepaper: an idle RPG on Solana with a $1 Genesis Hero NFT entry, the $HMANCER token, account levels, and a self-funding rewards pool.">
+<meta name="description" content="The Heromancer litepaper: an idle RPG on Solana with a $1 registration that opens a Pre-Registration Box, the $HMANCER token, account levels, and a self-funding rewards pool.">
 <style>
 :root{--bg:#0d0a1a;--card:#171130;--line:#2c2154;--txt:#efeaff;--mut:#a79fd1;--grn:#14f195;--pur:#9945ff;--gold:#ffd166}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -67,17 +67,26 @@ h2{text-shadow:0 4px 26px rgba(153,69,255,.35)}
 </header>
 
 <h2>1. <span>Introduction</span></h2>
-<p>Heromancer is an idle RPG. You are the Heromancer — a summoner. Your hero party battles on its own: while you work, while you sleep, while the app is closed. You check in once or twice a day, claim the loot your heroes won, sell it for $HMANCER, and spend $HMANCER on gear, skills, and new heroes that make your party stronger. Like a classic MMO RPG, your <b>account has a level</b>: battles earn EXP, and leveling up unlocks harder zones, extra hero slots, and richer loot. And every hero you own is an <b>NFT with a star rating (★1–★5)</b> — playable in your party and tradable with other players. No reflexes. No grinding. Just heroes fighting and numbers going up, on-chain.</p>
+<p>Heromancer is an idle RPG. You are the Heromancer — a summoner. Your hero party battles on its own: while you work, while you sleep, while the app is closed. You check in once or twice a day, claim the loot your heroes won, sell it for $HMANCER, and spend $HMANCER on gear, skills, and new heroes that make your party stronger. Like a classic MMO RPG, your <b>account has a level</b>: battles earn EXP, and leveling up unlocks harder zones, extra hero slots, and richer loot. And every hero you own is an <b>NFT with a star rating (★1–★5)</b> — playable in your party — your key to the game, carrying no promised monetary value. No reflexes. No grinding. Just heroes fighting and numbers going up, on-chain.</p>
 
 <h2>2. Heroes — <span>star-rated NFTs</span></h2>
-<p>Every hero in Heromancer is an <b>NFT on Solana</b>, living in the player's own wallet — playable in-game and tradable player-to-player:</p>
+<p>Every hero in Heromancer is an <b>NFT on Solana</b>, living in the player's own wallet — playable in-game, and above all the player's key to the game:</p>
 <ul>
 <li><b>Star rating ★1–★5</b> — a hero's rarity and power. More stars means higher base power and a higher loot rate. ★1 is common; ★5 is the rarest and strongest.</li>
 <li><b>Playable in-game</b> — heroes form your party: they battle 24/7, earn Loot and EXP, and grow with your account level. Party size grows as your account levels up.</li>
-<li><b>Tradable player-to-player</b> — buy, sell, and trade heroes with other players on any Solana NFT marketplace, anytime. The game reads your party from your wallet.</li>
+<li><b>Access key, no promised value</b> — a hero NFT carries no promised monetary value; its purpose is unlocking the game and fighting in your party. Heroes are transferable and the game reads your party from your wallet, so access follows the NFT — but nobody promises it can be sold for anything.</li>
 <li><b>Star-up fusion</b> — fuse duplicate heroes to raise a hero's star. Fused heroes are <b>burned</b>, so the hero supply shrinks as players build their ★5s.</li>
 </ul>
-<p><b>Getting in:</b> entry is a <b>one-time $1 registration</b>, paid in SOL. It mints the <b>Genesis Hero</b> — a <b>★★★ hero</b> — <b>the key to the game</b>: it activates your account and leads your first party. <b>Genesis supply is capped at 5,000.</b> Once they sell out, registration stays open at the same $1 — but it then buys <b>game access only, no NFT</b>: your account is registered to the wallet that paid, and you summon your first heroes with $HMANCER once summons open. Minting costs a small fraction of the $1 (network rent + fees); the rest funds the game economy. One account per wallet.</p>
+<p><b>Getting in:</b> entry is a <b>one-time $1 registration</b>, paid in SOL. Every registration includes one <b>Pre-Registration Box</b> (Section 2A) that opens immediately: almost every box holds <b>$HMANCER</b>, and <b>20 of the 10,000 boxes</b> hold the <b>Genesis Warden — a ★★★ hero NFT</b>, the rarest registration prize. <b>There are exactly 10,000 boxes.</b> Once they sell out, registration stays open at the same $1 — but it then buys <b>game access only, no box</b>: your account is registered to the wallet that paid, and you summon your first heroes with $HMANCER once summons open. One account per wallet.</p>
+
+<h2>2A. The <span>Pre-Registration Box</span></h2>
+<p>Registration buys entry to the game plus one box. The box opens the moment your registration payment lands — no waiting:</p>
+<ul>
+<li><b>9,980 boxes hold $HMANCER</b>, paid <b>straight into your wallet</b> when the box opens: <b>100</b> (5,000 boxes), <b>250</b> (3,000 boxes), <b>500</b> (1,500 boxes) or <b>1,000</b> (480 boxes) — 2,480,000 $HMANCER in total, paid from the game-rewards allocation (Section 5). The token cannot be traded until the trading launch (Section 4) — until then it simply sits in your wallet, visible and yours.</li>
+<li><b>20 boxes hold the Genesis Warden ★★★ NFT.</b> A winning box records your entitlement on the spot; the NFT itself is minted to your wallet in the claim window that opens <b>December 29, 2026</b> — three days before the game launches.</li>
+<li><b>Fair by construction:</b> the contents of all 10,000 boxes were assigned randomly <b>before registrations opened</b>, in payment order, and the assignment table is locked by a published SHA-256 commitment: <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;word-break:break-all">580d5fe1479c2d980a67fe3a153189cb1ced09057addf3698ff009a48b505f1d</span>. When the last box is opened, the full table is published and anyone can check the hash and confirm nothing was ever changed.</li>
+<li><b>Everyone plays from day one:</b> whatever your box holds, every registered account also receives a free <b>★1 starter hero</b> (Bram the Squire) when the game launches. The starter is bound to your account — it fights and levels like any hero, but it is not an NFT and cannot be transferred or sold. NFT heroes — the Genesis Warden and everything you summon — are the ones you truly own.</li>
+</ul>
 
 <h2>3. <span>The game loop</span></h2>
 <ol>
@@ -108,10 +117,10 @@ h2{text-shadow:0 4px 26px rgba(153,69,255,.35)}
 <tr><td>Starter loot rate</td><td>10 Loot / hour</td></tr>
 <tr><td>Offline accumulation cap</td><td>12 hours</td></tr>
 <tr><td>Starting account level</td><td>1 — zones and hero slots unlock by level</td></tr>
-<tr><td>Registration</td><td>$1 in SOL, one-time — the first 5,000 registrations mint the ★★★ Genesis Hero; after the cap, the same $1 registers game access only (no NFT)</td></tr>
+<tr><td>Registration</td><td>$1 in SOL, one-time — includes one Pre-Registration Box (10,000 boxes total, Section 2A); after the boxes sell out, the same $1 registers game access only (no box)</td></tr>
 <tr><td>Upgrade &amp; summon burn</td><td>10% of every upgrade and summon spend</td></tr>
 </table>
-<p><b>The systems in brief</b> (full detail in the <a href="guide.html">game guide</a>): 15 summonable heroes across ★1–★5 in five classes (Knight, Ranger, Mage, Rogue, Cleric), each with a passive and an ultimate skill; five battle zones (Verdant Fields → Dragon's Maw) gated by party Power, with loot multipliers ×1–×18; summons cost 1,000 $HMANCER with published odds (★1 44% · ★2 30% · ★3 17% · ★4 6.5% · ★5 2.5%, with a ★5 pity guarantee at 50 summons); gear in five rarities drops from zones and crafts upward.</p>
+<p><b>The systems in brief</b> (full detail in the <a href="guide.html">game guide</a>): 15 summonable heroes across ★1–★5 in five classes (Knight, Ranger, Mage, Rogue, Cleric), each with a passive and an ultimate skill; five battle zones (Verdant Fields → Dragon's Maw) gated by party Power, with loot multipliers ×1–×18 (Loot/hr = 10 × zone multiplier × Party Power ÷ 160); summons cost 1,000 $HMANCER (10× for 9,000, guaranteeing ★3+) with published odds (★1 44% · ★2 30% · ★3 17% · ★4 6.5% · ★5 2.5%, ★5 pity guarantee at 50 summons); gear in five rarities (Common → Legendary) drops from zones and crafts upward; star-up fusion burns 2 duplicates of the same star for +1★.</p>
 
 <h2>4. The <span>$HMANCER</span> token</h2>
 <table>
@@ -119,32 +128,33 @@ h2{text-shadow:0 4px 26px rgba(153,69,255,.35)}
 <tr><td>Ticker</td><td>$HMANCER</td></tr>
 <tr><td>Chain</td><td>Solana</td></tr>
 <tr><td>Supply</td><td>1,000,000,000 (fixed)</td></tr>
-<tr><td>Launch</td><td>Fair launch on pump.fun — no presale, no team allocation</td></tr>
-<tr><td>Contract</td><td>Published at launch — December 1, 2026</td></tr>
+<tr><td>Launch</td><td>Created ahead of launch as a standard Solana token (custom mint, not a launchpad) so players can hold it from their first box. <b>Not tradable until the trading launch on December 15, 2026:</b> no liquidity pool exists before that day, so there is nothing to buy or sell against. Mint authority is revoked at creation — the supply can never grow — and the full supply sits in one public treasury wallet until it is allocated.</td></tr>
+<tr><td>Contract</td><td>Published here as soon as the token is created — before registrations open</td></tr>
+<tr><td>Allocation</td><td>From the public treasury: <b>75%</b> liquidity at the trading launch + reserve · <b>20%</b> game rewards (box prizes, loot conversion, events) · <b>5%</b> operations. Treasury and allocation addresses are published.</td></tr>
 </table>
 <p><b>Utility — $HMANCER is the game's only currency:</b></p>
 <ul>
 <li><b>Earn it</b> by selling your heroes' loot in the Market.</li>
 <li><b>Spend it</b> on hero gear, skills, hero levels, hero summons, and future cosmetics and season passes.</li>
-<li><b>Burn it</b> — 10% of all upgrade spending is burned forever, so the more people play, the scarcer $HMANCER gets.</li>
+<li><b>Burn it</b> — 10% of all upgrade and summon spending is burned forever, so the more people play, the scarcer $HMANCER gets.</li>
 </ul>
 
 <h2>5. The economy — <span>sources and sinks</span></h2>
 <p>The economy is designed as a loop, not a faucet.</p>
-<p><b>Sources of $HMANCER rewards.</b> The Rewards Pool pays for loot. It is funded by <b>50% of every $1 registration</b> and by <b>creator fees</b> from $HMANCER trading (0.30% of bonding-curve volume on pump.fun; tiered after graduation). The Loot→$HMANCER rate floats with the pool's balance: a full pool pays generously, a thin pool pays less. Rewards can never exceed what the pool actually holds. <b>Season rewards:</b> the monthly Top 500 prizes (10,000 USDT in SOL, Section 3) are also paid from this pool after each season closes on the 1st of the month — loot payouts and season prizes share one pool and one rule: the pool only pays what it holds.</p>
+<p><b>Sources of $HMANCER rewards.</b> The Rewards Pool pays for loot. It is funded by <b>50% of every $1 registration</b> and by <b>trading fees</b> from $HMANCER trading, from the trading launch on December 15, 2026. The Pre-Registration Box token prizes (2,480,000 $HMANCER, Section 2A) are paid from the game-rewards allocation, straight from the treasury. The Loot→$HMANCER rate floats with the pool's balance: a full pool pays generously, a thin pool pays less. Rewards can never exceed what the pool actually holds. <b>Season rewards:</b> the monthly Top 500 prizes (10,000 USDT in SOL, Section 3) are also paid from this pool after each season closes on the 1st of the month — loot payouts and season prizes share one pool and one rule: the pool only pays what it holds.</p>
 <p><b>Sinks.</b> Hero upgrades and summons (90% recycled to the Rewards Pool, <b>10% burned</b>). Hero fusion <b>burns duplicate hero NFTs</b>. Future: season passes, cosmetics.</p>
-<p><b>Project revenue.</b> 50% of registration fees, plus a creator-fee share allocated to operations.</p>
+<p><b>Project revenue.</b> 50% of registration fees, plus a share of trading fees allocated to operations.</p>
 <p>This structure means player rewards come from <b>new players and trading activity</b> — stated plainly, the way it should be.</p>
 
 <h2>6. <span>Fair play</span></h2>
 <ul>
 <li>Battles are computed server-side; client tampering has no effect.</li>
-<li>One account per wallet; hero ownership is read from the player's wallet, and summon odds are published in-game.</li>
-<li>The Rewards Pool balance and the Loot→$HMANCER rate are displayed in-game, in the open.</li>
+<li>One account per wallet; hero ownership is read from the player's wallet.</li>
+<li>Summon odds, the Rewards Pool balance, and the Loot→$HMANCER rate are displayed in-game, in the open.</li>
 </ul>
 
 <h2>7. Risks and <span>disclaimer</span></h2>
-<p>Heromancer is a game. $HMANCER is a game token whose market price is set by traders and can go to zero. Registration buys a game access NFT — not an investment. There is <b>no guarantee of any price, earnings, or return</b>. Game parameters in this litepaper may be tuned before launch; material changes will be announced on the official channels.</p>
+<p>Heromancer is a game. $HMANCER is a game token whose market price is set by traders and can go to zero. Hero NFTs are game access passes and playable characters; they carry no promised monetary value, and any resale price is set by players and can be zero. Registration buys game entry and a Pre-Registration Box — not an investment. There is <b>no guarantee of any price, earnings, or return</b>. Game parameters in this litepaper may be tuned before launch; material changes will be announced on the official channels.</p>
 
 <a class="back" href="index.html">← Back to the Heromancer site</a>
 <footer>Heromancer — your heroes fight while you sleep.<br><a href="index.html">heromancer.github.io</a></footer>
