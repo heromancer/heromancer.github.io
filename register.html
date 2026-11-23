@@ -142,7 +142,7 @@ table.ob-table tr:last-child td{border-bottom:none}
 </div>
 
 <div class="compare">
-<div class="cmp gold"><h3>🎁 Box registration — first 10,000</h3><p>Your $1 opens one <b>Pre-Registration Box</b> the moment it lands:</p><ul><li>9,980 boxes hold $HMANCER (100–1,000), paid straight to your wallet</li><li>20 boxes hold the Genesis Warden ★★★ NFT (Power 160) — entitlement recorded instantly, NFT minted from December 29, 2026</li><li>Plus a free account-bound ★1 starter hero at launch, whatever the box holds</li></ul></div>
+<div class="cmp gold"><h3>🎁 Box registration — first 10,000</h3><p>Your $1 opens one <b>Pre-Registration Box</b> the moment it lands:</p><ul><li>9,980 boxes hold $HMANCER (1,600–25,000), paid straight to your wallet</li><li>20 boxes hold the Genesis Warden ★★★ NFT (Power 160) — entitlement recorded instantly, NFT minted from December 29, 2026</li><li>Plus a free account-bound ★1 starter hero at launch, whatever the box holds</li></ul></div>
 <div class="cmp"><h3>🎟️ Access registration — after the boxes</h3><p>Same $1, <b>game access only — no box</b>:</p><ul><li>Account registered to the wallet that paid</li><li>Free ★1 starter hero at launch, like every account</li><li>Summon NFT heroes with $HMANCER once summons open</li><li>Same seasons, same leaderboard, same prizes</li></ul></div>
 </div>
 
@@ -176,14 +176,14 @@ table.ob-table tr:last-child td{border-bottom:none}
 <table class="ob-table">
 <tr><th>Inside the box</th><th>Boxes</th><th>Chance</th></tr>
 <tr><td><b>Genesis Warden ★★★ — Hero NFT</b></td><td>20</td><td>0.2%</td></tr>
-<tr><td>1,000 $HMANCER</td><td>480</td><td>4.8%</td></tr>
-<tr><td>500 $HMANCER</td><td>1,500</td><td>15%</td></tr>
-<tr><td>250 $HMANCER</td><td>3,000</td><td>30%</td></tr>
-<tr><td>100 $HMANCER</td><td>5,000</td><td>50%</td></tr>
+<tr><td>25,000 $HMANCER</td><td>480</td><td>4.8%</td></tr>
+<tr><td>10,000 $HMANCER</td><td>1,500</td><td>15%</td></tr>
+<tr><td>5,000 $HMANCER</td><td>3,000</td><td>30%</td></tr>
+<tr><td>1,600 $HMANCER</td><td>5,000</td><td>50%</td></tr>
 </table>
-<p style="margin-top:12px">Token prizes are paid <b>straight to the wallet that paid</b> when the box opens — 2,480,000 $HMANCER in total, from the game-rewards allocation — and become tradable at the trading launch on <b>December 15, 2026</b>. Official $HMANCER contract: <code style="word-break:break-all">51JttFFUCM6dZdJeRPe1CnVbM38zULrfhcchZ9YJJrmH</code> — check any token you receive against this address. A Genesis Warden prize is recorded as your entitlement at opening; the NFT itself is minted to your wallet in the claim window opening <b>December 29, 2026</b>.</p>
+<p style="margin-top:12px">Token prizes are paid <b>straight to the wallet that paid</b> when the box opens — 50,000,000 $HMANCER in total (5% of supply), from the game-rewards allocation — and become tradable at the trading launch on <b>December 15, 2026</b>. Official $HMANCER contract: <code style="word-break:break-all">51JttFFUCM6dZdJeRPe1CnVbM38zULrfhcchZ9YJJrmH</code> — check any token you receive against this address. A Genesis Warden prize is recorded as your entitlement at opening; the NFT itself is minted to your wallet in the claim window opening <b>December 29, 2026</b>.</p>
 <p style="margin-top:10px"><b>Fair by construction</b> — the SHA-256 commitment of the box assignment table, published before registration opened:</p>
-<div class="ob-hash">580d5fe1479c2d980a67fe3a153189cb1ced09057addf3698ff009a48b505f1d</div>
+<div class="ob-hash">d0abfa252e109e12ef322d24bd0524ced79488230c87822796b6e560016d53a6</div>
 <p style="margin-top:8px">When the last box is opened, the full table is published and anyone can verify the hash — the contents could never be reshuffled after the fact.</p>
 </div>
 
@@ -316,10 +316,10 @@ document.querySelectorAll('.tilt').forEach(function(el){
   var tokenNote='In a real opening this prize is transferred <b>straight to the wallet that paid</b> — the moment the payment lands. It sits in your wallet, visible and yours, and becomes tradable at the trading launch on <b>December 15, 2026</b>.';
   var prizes=[
     {w:20,rare:true,big:'★★★ Genesis Warden — Hero NFT',txt:'The rarest box of all — only 20 exist among the 10,000. In a real opening, your entitlement is recorded the moment your payment lands, and the NFT itself is minted to your wallet in the claim window opening <b>December 29, 2026</b>. It is an access pass and a playable ★★★ hero, with no promised monetary value.'},
-    {w:480,big:'1,000 $HMANCER',txt:'The jackpot token tier. '+tokenNote},
-    {w:1500,big:'500 $HMANCER',txt:tokenNote},
-    {w:3000,big:'250 $HMANCER',txt:tokenNote},
-    {w:5000,big:'100 $HMANCER',txt:'The most common box. '+tokenNote}
+    {w:480,big:'25,000 $HMANCER',txt:'The jackpot token tier. '+tokenNote},
+    {w:1500,big:'10,000 $HMANCER',txt:tokenNote},
+    {w:3000,big:'5,000 $HMANCER',txt:tokenNote},
+    {w:5000,big:'1,600 $HMANCER',txt:'The most common box. '+tokenNote}
   ];
   var total=10000,opened=0,busy=false;
   function pick(){var r=Math.random()*total,acc=0,i;for(i=0;i<prizes.length;i++){acc+=prizes[i].w;if(r<acc)return prizes[i];}return prizes[prizes.length-1];}
